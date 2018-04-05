@@ -1,0 +1,101 @@
+/**index.wxss**/
+.header {
+  padding: 20rpx;
+  background-color: #f3f5f7;
+  position: relative;
+}
+.overview {
+  width: 100%;
+  height: 450rpx;
+  background-color: #303133;
+  box-shadow: 0 4rpx 16rpx 0 #303133;
+  color: #fff;
+  border-radius: 10rpx;
+  padding: 50rpx;
+  box-sizing: border-box;
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+}
+.right-info {
+  float: right;
+  text-align: right
+}
+.right-info text {
+  display: block;
+  margin-bottom: 20rpx;
+}
+.list {
+  background-color: #fff;
+  padding: 30rpx;
+}
+.items {
+  width: 100%;
+  height: auto;
+  border-radius: 10rpx;
+  border: 1rpx solid #ccc;
+  box-shadow: 0 4rpx 16rpx 0 #ccc;
+  box-sizing: border-box;
+  font-size: 0;
+  margin-bottom: 30rpx;
+}
+.items .item-img {
+  width: 100%;
+  height: 350rpx;
+  background-color: #ccc;
+}
+.items .item-content {
+  padding: 10rpx 30rpx 20rpx;
+}
+.item-content .title {
+  display: block;
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+  font-weight: bold;
+}
+.item-content .price {
+  display: inline-block;
+  font-size: 28rpx;
+  color: #F56C6C;
+}
+.item-content .sold {
+  float: right;
+  font-size: 28rpx;
+  color: #F56C6C;
+}
+
+
+@keyframes move_wave {
+  0% {
+      transform: translateX(0) translateZ(0) scaleY(1)
+  }
+  50% {
+      transform: translateX(-25%) translateZ(0) scaleY(0.6)
+  }
+  100% {
+      transform: translateX(-50%) translateZ(0) scaleY(1)
+  }
+}
+.waveWrapperInner {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  height: 100%;
+  left: 0;
+  bottom: -1px;
+}
+.bgBottom {
+    z-index: 5;
+}
+.wave {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+.waveBottom {
+  background-size: 50% 100px;
+  animation: move_wave 5s linear infinite;
+}

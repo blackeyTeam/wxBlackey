@@ -1,0 +1,13 @@
+<!--draw.wxml-->
+<view class="drawBox">
+  <view class="drawItem {{index===0? 'flash':''}}">1</view>
+  <view class="drawItem {{index===1? 'flash':''}}">2</view>
+  <view class="drawItem {{index===2? 'flash':''}}">3</view>
+  <view class="drawItem {{index===7? 'flash':''}}">8</view>
+  <view class="drawItem drawBtn" bindtap="run">开始抽奖</view>
+  <view class="drawItem {{index===3? 'flash':''}}">4</view>
+  <view class="drawItem {{index===6? 'flash':''}}">7</view>
+  <view class="drawItem {{index===5? 'flash':''}}">6</view>
+  <view class="drawItem {{index===4? 'flash':''}}">5</view>
+</view>
+

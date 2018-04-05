@@ -1,0 +1,41 @@
+/**draw.wxss**/
+/* page {
+  background-color: #1296db;
+} */
+.drawBox {
+  margin: 100rpx auto;
+  background-color: #d60013;
+  width: 510rpx;
+  height: auto;
+  border-radius: 8%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border: 30rpx solid #fe4236
+}
+.drawBox .drawItem {
+  display: block;
+  width: 160rpx;
+  height: 160rpx;
+  line-height: 160rpx;
+  color: #793238;
+  border-radius: 15%;
+  margin: 5rpx;
+  background-color: #feeeee;
+  text-align: center;
+  box-shadow: 0 -20rpx 0 #fdc0bf inset
+}
+.drawBox .drawItem.flash {
+  opacity: 0.8;
+}
+.drawBox .drawItem.drawBtn {
+  color: #f32a1a;
+  font-size: 50rpx;
+  line-height: 60rpx;
+  padding: 10rpx;
+  font-weight: bold;
+  box-sizing: border-box;
+  background-color: #ffe400;
+  box-shadow: 0 -20rpx 0 #e58e01 inset;
+  background-image: linear-gradient(135deg, #ffe400, #ffe400 15%, #ffd100 15%, #ffd100 20%, #ffe400 20%, #ffe400 30%, #ffd100 30%, #ffd100 35%,#ffe400 35%, #ffe400 45%, #ffd100 45%, #ffd100 50%,#ffe400 50%, #ffe400 60%, #ffd100 60%, #ffd100 65%,#ffe400 65%, #ffe400 75%, #ffd100 75%, #ffd100 80%,#ffe400 80%, #ffe400 90%, #ffd100 90%, #ffd100 95%)
+}

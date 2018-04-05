@@ -1,0 +1,40 @@
+<view class='moviedetail'>
+  <text class='title'>{{detail.title}}</text>
+  <view class='subject-info clearfix'>
+    <view class='left'>
+      <view class='rating'>
+        <text>评分{{detail.rating.average}}</text>
+        <text class='rate-count'>{{detail.ratings_count}}人评价</text>
+      </view>
+      <view class='label'>
+        <text class='label-text'>{{labels}}</text>
+        <text class='label-text'>导演：{{detail.directors[0].name}}</text>
+        <text class='label-text'>上映时间：{{detail.year}}({{detail.countries}})</text>
+      </view>
+    </view>
+    <view class='right'>
+      <image class="item-img" src="{{detail.images.small}}"></image>
+    </view>
+  </view>
+  <view class='block'>
+    <text class='summary'>{{detail.title}}的剧情简介</text>
+    <view class='summary-body'>
+      <text class="content {{show?'line-clamp3':''}}">{{detail.summary}}</text>
+      <text wx:if='{{show}}' bindtap="showmore" class='showmore'>(展开)</text>
+    </view>
+  </view>
+  <view class='block'>
+    <text class='summary'>影人</text>
+    <view>
+      <view class='summary-list' wx:for="{{detail.casts}}" wx:key="index">
+        <image class='item-poster' src="{{item.avatars.small}}"></image>
+        <view>
+          <text class='summary-name'>{{item.name}}</text>
+        </view>
+        <view>
+          <text class='summary-cast'>演员</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

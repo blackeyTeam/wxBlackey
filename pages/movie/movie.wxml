@@ -1,0 +1,38 @@
+<view>
+  <view class='search'>
+    <input class='search-area' type='text' placeholder="请输入关键字" value="{{searchValue}}" bindinput="searchValueInput"></input>
+    <icon bindtap='tosearch' class="search-icon" type='search' size='20'></icon>
+  </view>
+  <view class="movie_showing">
+    <view class='movie-title'>
+      <text>{{showing.title}}</text>
+    </view>
+    <view class="section-content">
+      <ul class="items">
+        <li wx:for="{{showing.subjects}}" wx:key="index" class="item">
+          <navigator url="../moviedetail/moviedetail?id={{item.id}}">
+            <image class="item-img" src="{{item.images.small}}"></image>
+            <text class="item-title">{{item.title}}</text>
+            <text class='item-rating'>评分 {{item.rating.average}}分</text>
+          </navigator>
+        </li>
+      </ul>
+    </view>
+  </view>
+  <view class="movie_coming">
+    <view class='movie-title'>
+      <text>{{coming.title}}</text>
+    </view>
+    <view class="section-content">
+      <ul class="items">
+        <li wx:for="{{coming.subjects}}" wx:key="index" class="item">
+          <navigator url="../moviedetail/moviedetail?id={{item.id}}">
+            <image class="item-img" src="{{item.images.small}}"></image>
+            <text class="item-title">{{item.title}}</text>
+            <text class='item-rating'>评分 {{item.rating.average}}分</text>
+          </navigator>
+        </li>
+      </ul>
+    </view>
+  </view>
+</view>

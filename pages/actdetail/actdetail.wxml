@@ -1,0 +1,37 @@
+<view>
+  <view class='banner-view'>
+    <image class='banner'>{{actdetail.name}}</image>
+  </view>
+  <view class='active-content'>
+    <view class='active-overview'>
+      <text class='name'>{{actdetail.name}}</text>
+      <text class='discountPrice'>{{actdetail.discountPrice}}元</text>
+      <text class='salePrice'>市场价：{{actdetail.salePrice}}</text>
+      <text class='shopInfo saleout'>已售：{{actdetail.saleOut}}份</text>
+    </view>
+    <view class='active-part1'>
+      <view class='part1-head'>
+        <text class='title'>邀请好友助力可获得特价</text>
+        <text class='rushPrice'>{{actdetail.rushPrice}}</text>
+        <text class='stock'>还剩{{actdetail.stock}}份</text>
+      </view>
+      <view class='part1-body'>
+        <text>邀请好友助力可获得特价</text>
+        <view>
+          <view>
+            <image class="userinfo-avatar" src="../../images/noavatar.png" background-size="cover"></image>
+            <image class="userinfo-avatar" src="../../images/noavatar.png" background-size="cover"></image>
+            <image class="userinfo-avatar" src="../../images/noavatar.png" background-size="cover"></image>
+            <image class="userinfo-avatar" src="../../images/noavatar.png" background-size="cover"></image>
+            <image class="userinfo-avatar" src="../../images/noavatar.png" background-size="cover"></image>
+            <image class="userinfo-avatar" src="../../images/noavatar.png" background-size="cover"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='active-part2'>
+      <text class='name'>注意事项</text>
+    </view>
+  </view>
+  <view class='pay'>去支付</view>
+</view>

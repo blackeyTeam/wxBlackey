@@ -1,0 +1,19 @@
+.userinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  background-color: #1296db;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 40rpx;
+  border-radius: 50%;
+  background-color:#fff;
+}
+
+.userinfo-nickname {
+  color: #fff;
+  margin-top:40rpx;
+}

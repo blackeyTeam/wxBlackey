@@ -1,0 +1,127 @@
+/* pages/moviedetail/moviedetail.wxss */
+
+.clearfix:after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both;
+}
+
+.moviedetail {
+  margin: 0 30rpx;
+}
+
+.title {
+  margin: 50rpx 0 10rpx;
+  font-size: 40rpx;
+  line-height: 48rpx;
+  word-break: break-all;
+  display: inline-block;
+}
+
+.subject-info {
+  position: relative;
+  margin-bottom: 50rpx;
+}
+
+.subject-info .left {
+  padding-bottom: 50rpx;
+  display: inline-block;
+}
+
+.rating {
+  font-size: 28rpx;
+}
+
+.rate-count {
+  color: #aaa;
+  margin-left: 30rpx;
+}
+
+.label {
+  margin-top: 50rpx;
+  font-size: 28rpx;
+}
+
+.label-text {
+  display: block;
+}
+
+.subject-info .right {
+  float: right;
+  width: 200rpx;
+}
+
+.item-img {
+  width: 100%;
+  height: 320rpx;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.block {
+  display: block;
+  margin-bottom: 50rpx;
+}
+
+.summary {
+  color: #aaa;
+  margin: 0 0 28rpx;
+  font-size: 28rpx;
+  display: block;
+}
+
+.summary-body {
+  text-indent: 20rpx;
+  font-size: 28rpx;
+}
+
+.content {
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal!important;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-box-orient: vertical;
+  font-size: 28rpx;
+  color: #494949;
+}
+
+.line-clamp3 {
+  -webkit-line-clamp: 3;
+}
+
+.showmore {
+  color: #42bd56;
+}
+
+.item-poster {
+  width: 150rpx;
+  height: 215rpx;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.summary-list {
+  width: 150rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+
+.summary-name {
+  text-align: center;
+  display: block;
+  font-size: 28rpx;
+  margin-bottom: 15rpx;
+}
+
+.summary-cast {
+  text-align: center;
+  display: block;
+  font-size: 28rpx;
+  color: #aaa;
+}

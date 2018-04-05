@@ -1,0 +1,89 @@
+.banner-view {
+  font-size: 0;
+}
+.banner {
+  width: 100%;
+  height: 450rpx;
+  background-color: #ccc;
+}
+.active-content {
+  padding: 20rpx 30rpx 100rpx;
+}
+.active-overview .name {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 40rpx;
+}
+.active-overview .discountPrice {
+  display: block;
+  font-size: 38rpx;
+  color: #F56C6C;
+  margin-bottom: 10rpx;
+}
+.active-overview .salePrice {
+  font-size: 24rpx;
+  color: #ccc;
+  text-decoration:line-through;
+}
+.active-overview .saleout {
+  font-size: 24rpx;
+  color: #ccc;
+  float: right;
+}
+.active-part1 {
+  margin-top: 30rpx;
+  margin-bottom: 100rpx;
+  padding: 30rpx;
+  border-radius: 10rpx;
+  border: 1rpx solid #ccc;
+  box-shadow: 0 4rpx 16rpx 0 #ccc;
+}
+.active-part1 .part1-head{
+  padding: 35rpx 0;
+  border-bottom: 1rpx solid #ccc;
+}
+.part1-head .title{
+  display: block;
+  font-weight: bold;
+  margin-bottom: 40rpx;
+}
+.part1-head .rushPrice{
+  font-size: 38rpx;
+  color: #F56C6C;
+  margin-bottom: 10rpx;
+}
+.part1-head .stock{
+  font-size: 24rpx;
+  color: #ccc;
+  float: right;
+}
+.active-part1 .part1-body{
+  font-size: 28rpx;
+  padding: 35rpx 0 20rpx;
+}
+.userinfo-avatar {
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 30rpx;
+  margin-right: 35rpx;
+  background-color:#fff;
+}
+.active-part2 .name {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 40rpx;
+}
+
+.pay {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  background-color: #1296db;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  font-size: 34rpx;
+  color: #fff;
+}

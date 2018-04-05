@@ -1,0 +1,29 @@
+<view>
+  <view class='search'>
+    <input class='search-area' type='text' placeholder="请输入关键字" value="{{searchValue}}" bindinput="searchValueInput"></input>
+    <icon bindtap='searchMovie' class="search-icon" type='search' size='20'></icon>
+  </view>
+  <view class="movie-search">
+    <view class='movie-title'>
+      <text>{{result.title}}</text>
+    </view>
+    <view class="section-content">
+      <!-- <ul class="items"> -->
+      <view wx:for="{{result.subjects}}" wx:key="index" class="item">
+        <navigator url="../moviedetail/moviedetail?id={{item.id}}">
+          <image class="item-img" src="{{item.images.small}}"></image>
+          <view class='item-info'>
+            <text class="item-title">{{item.title}}</text>
+            <text class='item-rating'>评分 {{item.rating.average}}分</text>
+            <text class='item-label'>{{item.genres}}</text>
+            <view class='item-label'>主要演员：{{item.casts[0].name}}
+              <!-- <text wx:for="{{item.casts}}" wx:for-item="casts" wx:key="i">{{casts.name}} </text> -->
+            </view>
+            <text class='item-label'>上映时间：{{item.year}}</text>
+          </view>
+        </navigator>
+      </view>
+      <!-- </ul> -->
+    </view>
+  </view>
+</view>

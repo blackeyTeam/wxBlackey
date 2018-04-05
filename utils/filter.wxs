@@ -1,0 +1,16 @@
+//过滤器
+
+//保留两位小数
+var price_build = function (v) {
+  return parseFloat(v / 100).toFixed(2)
+}
+
+//距离km,保留一位小数
+var distance_build = function (v) {
+  return parseFloat(v / 1000).toFixed(1)
+}
+
+module.exports = {
+  price_build: price_build,
+  distance_build: distance_build
+}
