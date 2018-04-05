@@ -16,15 +16,17 @@
         </view>
   </view>
   <view class='list'>
-    <view class='items'>
-      <navigator url="../actdetail/actdetail?id=123">
-        <image class='item-img'></image>
+    <view class='items' wx:for="{{activityObjArray}}" wx:key="">
+      <navigator url="../actdetail/actdetail?id={{item.id}}">
+        <image class='item-img' src="{{item.mainPage!=null?item.mainPage:''}}"></image>
         <view class='item-content'>
-          <text class='title'>又一家烧烤（西湖店）</text>
-          <text class='price'>￥5.00</text>
-          <text class='sold'>已售369份</text>
+          <text class='title'>{{item.name}}</text>
+          <text class='price'>￥{{filter.price_build(item.rushPrice)}}</text>
+          <text class='sold'>已售{{item.stock}}份</text>
         </view>
       </navigator>
     </view>
   </view>
 </view>
+<wxs module="filter" src="../../utils/filter.wxs"></wxs> <!-- wxs过滤器 -->
+
