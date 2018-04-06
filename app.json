@@ -27,18 +27,6 @@
         "text": "首页"
       },
       {
-        "selectedIconPath": "images/movie2.png",
-        "iconPath": "images/movie.png",
-        "pagePath": "pages/movie/movie",
-        "text": "电影"
-      },
-      {
-        "selectedIconPath": "images/find2.png",
-        "iconPath": "images/find.png",
-        "pagePath": "pages/draw/draw",
-        "text": "发现"
-      },
-      {
         "selectedIconPath": "images/mine2.png",
         "iconPath": "images/mine.png",
         "pagePath": "pages/mine/mine",
