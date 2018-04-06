@@ -10,11 +10,11 @@ Page({
   onLoad: function (options) {
     if (options.id == null) {
       wx.navigateBack()
-    } else if (options.id!=null&&options.openid==null){
+    } else if (options.id != null && options.openid == null) {
       this.setData({
         id: options.id
       })
-    } else if (options.id != null && options.openid != null){
+    } else if (options.id != null && options.openid != null) {
       this.setData({
         id: options.id
       })
@@ -40,47 +40,68 @@ Page({
   },
 
   //获取分享者openid得到折扣
-  shareDiscount: function (openid){
-    console.info(openid)
+  shareDiscount: function (openid) {
     let that = this
     let userOpenid = wx.getStorageSync("openid")
-    if (userOpenid=="") {
-      login.login(function(){
-        request.shareDiscount({ openid: userOpenid, firendId: openid, activity: that.data.id }, {
-          success: res => {
-            if (res.data.code == 200) {
+    if (userOpenid == "") {
+      login.login(function () {
+        request.shareDiscount({ openId: wx.getStorageSync("openid"), friendId: openid, activity: that.data.id }, {
+          success: rtn => {
+            if (rtn.data.code == 200) {
               wx.showToast({
                 title: "您已帮好友获利成功",
-                icon: "none"
+                icon: "none",
+              })
+            } else {
+              wx.showToast({
+                title: rtn.data.data,
+                icon: "none",
               })
             }
           },
-          fail: res => {
+          fail: rtn => {
 
           }
         })
       })
+    }else{
+      request.shareDiscount({ openId: wx.getStorageSync("openid"), friendId: openid, activity: that.data.id }, {
+        success: rtn => {
+          if (rtn.data.code == 200) {
+            wx.showToast({
+              title: "您已帮好友获利成功",
+              icon: "none",
+            })
+          }else {
+            wx.showToast({
+              title: rtn.data.data,
+              icon: "none",
+            })
+          }
+        },
+        fail: rtn => {
+
+        }
+      })
     }
-    console.info(userOpenid)
- 
   },
 
   //查询已砍价好友
-  getDiscountList:function(){
+  getDiscountList: function () {
     let that = this
     let userOpenid = wx.getStorageSync("openid")
     if (userOpenid == "") {
-      login.login(function(){
+      login.login(function () {
         request.getDiscountList({
           openId: userOpenid, activity: that.data.id
         }, {
-            success: res => {
+            success: rtn => {
 
             },
           })
       })
     }
- 
+
   },
 
   onShareAppMessage: function (options) {
@@ -125,7 +146,7 @@ let request = {
   activityDetail: (data, frequestHandler) => {
     http.GET("/server/activity/detail", data, frequestHandler)
   },
-  shareDiscount: (data , frequestHandler) => {
+  shareDiscount: (data, frequestHandler) => {
     http.POST("/server/cut/save", data, frequestHandler)
   },
   getDiscountList: (data, frequestHandler) => {

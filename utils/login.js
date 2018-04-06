@@ -23,12 +23,11 @@ const login = (callback) =>  {
                     'content-type': 'application/x-www-form-urlencoded'
                   }, // 设置请求的 header 
                   success: res => {
-                    if (res.data.code != 200) {
+                    if (res.data.code!=200) {
                       wx.showToast({
                         title: res.data.message,
                         icon: "none"
                       })
-                      setTimeout(wx.navigateBack(), 1500);
                     }
                     wx.setStorageSync("openid", res.data.data.openid)
                     if (callback ==typeof 'function'){

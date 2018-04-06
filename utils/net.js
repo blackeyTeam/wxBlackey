@@ -12,7 +12,7 @@ const POST = (url, data, requestHandler) => {
 }
 
 const request = (method, header, url, data, requestHandler) => {
-  wx.showLoading({ title: "加载中...", mask: false })
+  wx.showLoading({ title: "加载中..."})
   wx.request({
     url: app.globalData.server + url,
     data: data,
@@ -21,15 +21,17 @@ const request = (method, header, url, data, requestHandler) => {
     success: res => {
       if ("function" == typeof requestHandler.success) {
         requestHandler.success(res)
+        // wx.hideLoading()
       }
     },
     fail: res => {
       if ("function" == typeof requestHandler.fail) {
         requestHandler.fail(res)
+        // wx.hideLoading()        
       }
     },
     complete: res => {
-      wx.hideLoading()
+      setTimeout(wx.hideLoading(), 1000);
       // complete
       if ("function" == typeof requestHandler.complete) {
         requestHandler.complete(res)
