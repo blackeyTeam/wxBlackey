@@ -31,7 +31,9 @@ const request = (method, header, url, data, requestHandler) => {
       }
     },
     complete: res => {
-      setTimeout(wx.hideLoading(), 1000);
+      setTimeout(function(){
+        wx.hideLoading()
+      }, 1000);
       // complete
       if ("function" == typeof requestHandler.complete) {
         requestHandler.complete(res)

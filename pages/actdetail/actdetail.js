@@ -5,7 +5,8 @@ import login from '../../utils/login.js' //网络请求
 
 Page({
   data: {
-    activityObj: {}
+    activityObj: {},
+    discountArray:[]
   },
   onLoad: function (options) {
     if (options.id == null) {
@@ -44,46 +45,31 @@ Page({
     let that = this
     let userOpenid = wx.getStorageSync("openid")
     if (userOpenid == "") {
-      login.login(function () {
-        request.shareDiscount({ openId: wx.getStorageSync("openid"), friendId: openid, activity: that.data.id }, {
-          success: rtn => {
-            if (rtn.data.code == 200) {
-              wx.showToast({
-                title: "您已帮好友获利成功",
-                icon: "none",
-              })
-            } else {
-              wx.showToast({
-                title: rtn.data.data,
-                icon: "none",
-              })
-            }
-          },
-          fail: rtn => {
-
-          }
-        })
-      })
-    }else{
-      request.shareDiscount({ openId: wx.getStorageSync("openid"), friendId: openid, activity: that.data.id }, {
-        success: rtn => {
-          if (rtn.data.code == 200) {
-            wx.showToast({
-              title: "您已帮好友获利成功",
-              icon: "none",
-            })
-          }else {
-            wx.showToast({
-              title: rtn.data.data,
-              icon: "none",
-            })
-          }
-        },
-        fail: rtn => {
-
-        }
-      })
+      login.login(that.saveShareDiscount(openid))
+    } else {
+      login.login(that.saveShareDiscount(openid))
     }
+  },
+
+  saveShareDiscount: function (openid) {
+    request.shareDiscount({ openId: wx.getStorageSync("openid"), friendId: openid, activity: this.data.id }, {
+      success: rtn => {
+        if (rtn.data.code == 200) {
+          wx.showToast({
+            title: "您已帮好友获利成功",
+            icon: "none",
+          })
+        } else {
+          wx.showToast({
+            title: rtn.data.data,
+            icon: "none",
+          })
+        }
+      },
+      fail: rtn => {
+
+      }
+    })
   },
 
   //查询已砍价好友
@@ -91,17 +77,25 @@ Page({
     let that = this
     let userOpenid = wx.getStorageSync("openid")
     if (userOpenid == "") {
-      login.login(function () {
-        request.getDiscountList({
-          openId: userOpenid, activity: that.data.id
-        }, {
-            success: rtn => {
-
-            },
-          })
-      })
+      login.login(that.discountList())
+    }else{
+      that.discountList()
     }
 
+  },
+
+  //已砍价列表
+  discountList: function () {
+    let that = this
+    request.getDiscountList({
+      openId: wx.getStorageSync("openid"), activity: that.data.id
+    }, {
+        success: res => {
+          that.setData({
+            discountArray: res.data.data
+          })
+        },
+      })
   },
 
   onShareAppMessage: function (options) {
