@@ -1,10 +1,6 @@
 <view>
   <view class="userinfo">
-    <block wx:if="{{!hasUserInfo && canIUse}}">
-      <image bindtap="getUserInfo" class="userinfo-avatar" src="./images/noavatar.png" background-size="cover"></image>
-      <text class="userinfo-nickname">请登录</text>
-    </block>
-    <block wx:else>
+    <block>
       <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>

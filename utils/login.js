@@ -10,7 +10,7 @@ const login = (callback) =>  {
           wx.getSetting({
             success: res => {
               if (res.authSetting['scope.userInfo']) {
-                app.globalData.userInfo = res.userInfo;
+                app.globalData.userInfo = res2.userInfo;
                 wx.request({
                   url: app.globalData.server + '/server/userInfo/login',
                   data: {
