@@ -27,7 +27,7 @@ const request = (method, header, url, data, requestHandler) => {
     fail: res => {
       if ("function" == typeof requestHandler.fail) {
         requestHandler.fail(res)
-        // wx.hideLoading()        
+        // wx.hideLoading()     
       }
     },
     complete: res => {

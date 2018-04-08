@@ -1,3 +1,5 @@
+@import "../../wxParse/wxParse.wxss";
+
 .banner-view {
   font-size: 0;
 }
@@ -8,16 +10,17 @@
 }
 .active-content {
   padding: 20rpx 30rpx 100rpx;
+  font-size: 0;
 }
 .active-overview .name {
   display: block;
-  text-align: center;
+  font-size:36rpx;
   font-weight: bold;
   margin-bottom: 40rpx;
 }
 .active-overview .discountPrice {
   display: block;
-  font-size: 38rpx;
+  font-size: 40rpx;
   color: #F56C6C;
   margin-bottom: 10rpx;
 }
@@ -45,11 +48,12 @@
 }
 .part1-head .title{
   display: block;
+  font-size:36rpx;
   font-weight: bold;
   margin-bottom: 40rpx;
 }
 .part1-head .rushPrice{
-  font-size: 38rpx;
+  font-size: 40rpx;
   color: #F56C6C;
   margin-bottom: 10rpx;
 }
@@ -65,25 +69,71 @@
 .userinfo-avatar {
   width: 50rpx;
   height: 50rpx;
+  border-radius:50%;
   margin-top: 30rpx;
   margin-right: 35rpx;
   background-color:#fff;
 }
-.active-part2 .name {
+.active-part2,
+.active-part3,
+.active-part4 {
+  margin-bottom: 40rpx;
+}
+.active-part2 .name,
+.active-part3 .name,
+.active-part4 .name {
   display: block;
   text-align: center;
+  font-size: 36rpx;
   font-weight: bold;
   margin-bottom: 40rpx;
 }
+.active-part2 .txt,
+.wxParse-p,
+.active-part4 .txt {
+  display: block;
+  font-size: 30rpx;
+  margin-bottom: 30rpx;
+}
 
-.pay {
+.bottom-nav {
+  display: flex;
   width: 100%;
   height: 100rpx;
-  line-height: 100rpx;
-  background-color: #1296db;
+  border-top: 1rpx solid #ccc;
+  text-align: center;
+  font-size: 24rpx;
   position: fixed;
   bottom: 0;
-  text-align: center;
-  font-size: 34rpx;
+}
+
+.bottom-nav .home,
+.bottom-nav .service {
+  flex: 1;
+  background-color: #fff;
+  height: 100rpx;
+  border-right: 1rpx solid #ccc;
+  box-sizing: border-box;
+  padding: 14rpx;
+}
+
+.bottom-nav .pay {
+  flex: 2;
+  height: 100rpx;
+  line-height: 40rpx;
+  padding: 10rpx 0;
+  background-color: #1296db;
   color: #fff;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.bottom-nav .icon {
+  display: block;
+  font-size: 40rpx;
+}
+
+.bottom-nav .txt {
+  display: block;
 }
