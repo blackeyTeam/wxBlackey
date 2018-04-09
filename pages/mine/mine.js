@@ -15,7 +15,7 @@ Page({
   },
   toService() {
     wx.navigateTo({
-      url: '../service/service',
+      url: '../service/service'
     })
   },
   toOrdersAll() {

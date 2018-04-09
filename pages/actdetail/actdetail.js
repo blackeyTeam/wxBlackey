@@ -60,7 +60,11 @@ Page({
     this.activityDetail()  //活动详情
     this.getDiscountList() //查询已砍价好友
   },
-
+  toService() {
+    wx.navigateTo({
+      url: '../service/service'
+    })
+  },
   toHome() {
     console.log(11111)
     wx.switchTab({

@@ -47,7 +47,7 @@
       <text class='iconfont icon-daohangshouye icon'></text>
       <text class='txt'>首页</text>
     </view>
-    <view class='service'>
+    <view class='service' bindtap='toService'>
       <text class='iconfont icon-kefu icon'></text>
       <text class='txt'>客服</text>
     </view>
