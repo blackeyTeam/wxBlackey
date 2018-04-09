@@ -21,7 +21,7 @@ Page({
     request.activityPage({},{
       success: res => {
         that.setData({
-          activityObjArray:res.data.data.content
+          activityObjArray:res.data.content
         })
       },
     })
