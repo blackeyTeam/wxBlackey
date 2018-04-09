@@ -1,0 +1,35 @@
+.service {
+  text-align: center;
+  font-size: 0;
+}
+
+.service .title {
+  width: 60%;
+  border: 1rpx solid #000;
+  border-radius: 10rpx;
+  margin: 80rpx auto;
+  padding: 10rpx 0;
+  color: #F56C6C;
+  font-size: 36rpx;
+}
+
+.service .txt {
+  font-size: 30rpx;
+  margin-bottom: 60rpx;
+  position: relative;
+}
+
+.service .num {
+  color: #F56C6C;
+  font-size: 30rpx;
+}
+.service .btn {
+  padding: 5rpx 30rpx;
+  position: absolute;
+  font-size: 26rpx;
+  right: 30rpx;
+  top: 0;
+  background-color: #1296db;
+  border-radius: 10rpx;
+  color: #fff;
+}

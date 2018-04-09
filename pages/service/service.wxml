@@ -1,0 +1,13 @@
+<view class='service'>
+  <view class='title'>添加工作人员微信</view>
+  <view class='txt'>添加电商平台工作人员的微信号</view>
+  <view class='txt'>
+    <text class='num'>{{wxNum}}</text>
+    <view class='btn' bindtap='copy'>复制</view>
+  </view>
+  <view class='txt'>或直接拨打电话</view>
+  <view class='txt'>
+    <text class='num'>{{mobile}}</text>
+    <view class='btn' bindtap='call'>拨打</view>
+  </view>
+</view>

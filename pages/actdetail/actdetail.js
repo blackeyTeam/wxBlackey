@@ -7,6 +7,7 @@ import wxParse from'../../wxParse/wxParse.js';
 Page({
   data: {
     activityObj: {},
+    friends: 0,
     discountArray:[
       {
         friend:{
@@ -132,10 +133,12 @@ Page({
     }, {
         success: res => {
           console.log(res);
+          let friends = res.data.data.length;
           let discountArray = res.data.data.concat(that.data.discountArray);
           discountArray = discountArray.slice(0,6);
           that.setData({
-            discountArray: discountArray
+            discountArray: discountArray,
+            friends: friends
           })
         },
       })
@@ -151,14 +154,29 @@ Page({
       success: function (res) {
         // 转发成功之后的回调
         if (res.errMsg == 'shareAppMessage:ok') {
+          wx.showToast({
+            title: '转发成功',
+            icon: 'success',
+            duration: 2000
+          })
         }
       },
-      fail: function () {
+      fail: function (res) {
         // 转发失败之后的回调
         if (res.errMsg == 'shareAppMessage:fail cancel') {
           // 用户取消转发
+          wx.showToast({
+            title: '取消转发',
+            icon: 'none',
+            duration: 2000
+          })
         } else if (res.errMsg == 'shareAppMessage:fail') {
           // 转发失败，其中 detail message 为详细失败信息
+          wx.showToast({
+            title: '转发失败',
+            icon: 'none',
+            duration: 2000
+          })
         }
       },
       complete: function () {
@@ -170,12 +188,44 @@ Page({
       var eData = options.target.dataset;
       console.log(eData.name);     // shareBtn
       // 此处可以修改 shareObj 中的内容
-      shareObj.path = '/pages/btnname/btnname?btn_name=' + eData.name;
+      shareObj.path = '/pages/actdetail/actdetail?id=' + that.data.id + "&openid=" + wx.getStorageSync("openid");
     }
     // 返回shareObj
     return shareObj;
-  }
+  },
+  payTap: function () {
+    var self = this;
+    wx.request({
+      url: 'https://www.hgdqdev.cn/api/wxpay/unifiedorder',
+      data: {
+        openid: self.data.openid   // 这里正常项目不会只有openid一个参数
+      },
+      success: function (res) {
+        if (res.data.status == 100) {
+          var payModel = res.data;
+          wx.requestPayment({
+            'timeStamp': payModel.timestamp,
+            'nonceStr': payModel.nonceStr,
+            'package': payModel.package,
+            'signType': 'MD5',
+            'paySign': payModel.paySign,
+            'success': function (res) {
+              wx.showToast({
+                title: '支付成功',
+                icon: 'success',
+                duration: 2000
+              })
+            },
+            'fail': function (res) {
+            }
+          })
+        }
+      },
+      fail: function () {
 
+      }
+    })
+  }
 })
 
 //接口请求
@@ -187,6 +237,9 @@ let request = {
     http.POST("/server/cut/save", data, frequestHandler)
   },
   getDiscountList: (data, frequestHandler) => {
+    http.GET("/server/cut/list", data, frequestHandler)
+  },
+  pay: (data, frequestHandler) => {
     http.GET("/server/cut/list", data, frequestHandler)
   }
 }
