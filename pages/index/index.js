@@ -5,20 +5,31 @@ import http from '../../utils/net.js' //网络请求
 import login from '../../utils/login.js' //网络请求
 Page({
   data: {
+    size: 5,
+    page: 0,
     activityObjArray:[]
   },
 
   onLoad: function () {
     login.login()
+    this.activityPage()
   },
 
   onShow:function(){
+    
+  },
+
+  loadMore() {
+    this.data.page++;
     this.activityPage()
   },
 
   activityPage:function(){
     let that = this
-    request.activityPage({},{
+    request.activityPage({
+      size: that.data.size,
+      number: that.data.page
+    },{
       success: res => {
         console.log(res);
         that.setData({

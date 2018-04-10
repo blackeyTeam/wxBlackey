@@ -14,16 +14,18 @@ Page({
       userId: options.openid,
       orderParam: options.param,
     })    
-    // request.getOrders({
-    //   id: this.data.userId,
-    //   orderParam: this.data.orderParam
-    //   }, {
-    //   success: res => {
-    //     this.setData({
-    //       orderData: res.dat.data
-    //     })
-    //   }
-    // })
+    request.getOrders({
+      status: this.data.orderParam
+      }, {
+      success: res => {
+        console.log(res)
+        if (res.statusCode == 200) {
+          this.setData({
+            orderData: res.data.content
+          })
+        }
+      }
+    })
   },
   onShow: function () {
     this.setData({
@@ -31,26 +33,27 @@ Page({
     })
     console.info(this.data.userInfo)
   },
-  searchOeders(e) {
+  searchOrders(e) {
     console.log(e.target.dataset.param)
     this.setData({
       orderParam: e.target.dataset.param
     })
-    // request.getOrders({
-    //   id: this.data.userId,
-    //   orderParam: e.target.dataset.param
-    //   }, {
-    //   success: res => {
-    //     this.setData({
-    //       orderData: res.dat.data
-    //     })
-    //   }
-    // })
+    request.getOrders({
+      status: e.target.dataset.param
+      }, {
+      success: res => {
+        if (res.statusCode == 200) {
+          this.setData({
+            orderData: res.data.content
+          })
+        }
+      }
+    })
   }
 })
 
 let request = {
   getOrders: (data, frequestHandler) => {
-    http.GET("/server/activity/detail", data, frequestHandler)
+    http.POST("/server/record/page", data, frequestHandler)
   }
 }
