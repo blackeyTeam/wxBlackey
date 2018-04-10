@@ -20,6 +20,7 @@ Page({
     let that = this
     request.activityPage({},{
       success: res => {
+        console.log(res);
         that.setData({
           activityObjArray:res.data.content
         })

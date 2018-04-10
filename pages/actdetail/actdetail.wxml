@@ -17,10 +17,11 @@
         <text class='stock'>还剩{{activityObj.stock}}份</text>
       </view>
       <view class='part1-body'>
-        <text>邀请好友助力可获得特价</text>
+        <text>邀请好友助力可获得特价，已邀请<text style='color:#F56C6C'>{{friends}}</text>个</text>
         <view>
           <view>
             <image wx:for="{{discountArray}}" wx:key="" class="userinfo-avatar" src="{{item.friend.avatarUrl}}" background-size="cover"></image>
+            <button class='invitation' plain="true" data-name="shareBtn" open-type="share">+</button>
           </view>
         </view>
       </view>
@@ -46,12 +47,12 @@
       <text class='iconfont icon-daohangshouye icon'></text>
       <text class='txt'>首页</text>
     </view>
-    <view class='service'>
+    <view class='service' bindtap='toService'>
       <text class='iconfont icon-kefu icon'></text>
       <text class='txt'>客服</text>
     </view>
-    <view class='pay'>
-      <text class='txt'>￥{{activityObj.rushPrice}}.00</text>
+    <view class='pay' bindtap="payTap">
+      <text class='txt'>￥{{activityObj.lowPrice}}.00</text>
       <text class='txt'>去支付</text>
     </view>
   </view>

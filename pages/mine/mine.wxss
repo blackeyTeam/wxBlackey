@@ -12,9 +12,9 @@ page {
 .userinfo-avatar {
   width: 128rpx;
   height: 128rpx;
-  margin: 40rpx 80rpx;
+  margin: 40rpx 40rpx 40rpx 80rpx;
   border-radius: 50%;
-  border: 2rpx solid #fff;
+  border: 6rpx solid #fff;
   background-color:#fff;
 }
 

@@ -1,0 +1,7 @@
+<view>
+  <view class='head-nav'>
+    <view data-param='all' class="txt {{orderParam==='all'?'selected':''}}" bindtap='searchOeders'>全部</view>
+    <view data-param='use' class="txt {{orderParam==='use'?'selected':''}}" bindtap='searchOeders'>待使用</view>
+    <view data-param='used' class="txt {{orderParam==='used'?'selected':''}}" bindtap='searchOeders'>已使用</view>
+  </view>
+</view>

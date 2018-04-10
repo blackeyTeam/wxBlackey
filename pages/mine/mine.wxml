@@ -8,21 +8,21 @@
   <view class='order'>
     <view class='order-head'>我的订单</view>
     <view class='order-body'>
-      <view class='order-body-item'>
+      <view class='order-body-item' bindtap='toOrdersAll'>
         <text class='iconfont icon-dingdan icon'></text>
         <text class='txt'>全部</text>
       </view>
-      <view class='order-body-item'>
+      <view class='order-body-item' bindtap='toOrdersUse'>
         <text class='iconfont icon-yuyuedingdan icon'></text>
         <text class='txt'>待使用</text>
       </view>
-      <view class='order-body-item'>
+      <view class='order-body-item' bindtap='toOrdersUsed'>
         <text class='iconfont icon-yiwanchengdingdan icon'></text>
         <text class='txt'>已使用</text>
       </view>
     </view>
   </view>
-  <view class='customer-service'>
+  <view class='customer-service' bindtap='toService'>
     <text class='txt'>联系客服</text>
     <text class='iconfont icon-jiantouarrow487 icon'></text>    
   </view>
