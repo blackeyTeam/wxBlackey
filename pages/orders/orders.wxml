@@ -6,7 +6,7 @@
   </view>
   <view class='order-list'>
     <view class='items' wx:for="{{orderData}}" wx:key="">
-      <text class='title'>￥{{item.activity.name}}</text>
+      <text class='title'>{{item.activity.name}}</text>
       <text class='price'>￥{{item.price}}</text>
     </view>
   </view>
