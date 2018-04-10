@@ -8,15 +8,15 @@
   <view class='order'>
     <view class='order-head'>我的订单</view>
     <view class='order-body'>
-      <view class='order-body-item' bindtap='toOrdersAll'>
+      <view data-param='all' class='order-body-item' bindtap='toOrders'>
         <text class='iconfont icon-dingdan icon'></text>
         <text class='txt'>全部</text>
       </view>
-      <view class='order-body-item' bindtap='toOrdersUse'>
+      <view data-param='use' class='order-body-item' bindtap='toOrders'>
         <text class='iconfont icon-yuyuedingdan icon'></text>
         <text class='txt'>待使用</text>
       </view>
-      <view class='order-body-item' bindtap='toOrdersUsed'>
+      <view data-param='used' class='order-body-item' bindtap='toOrders'>
         <text class='iconfont icon-yiwanchengdingdan icon'></text>
         <text class='txt'>已使用</text>
       </view>

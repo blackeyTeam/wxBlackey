@@ -1,7 +1,13 @@
 <view>
   <view class='head-nav'>
-    <view data-param='all' class="txt {{orderParam==='all'?'selected':''}}" bindtap='searchOeders'>全部</view>
-    <view data-param='use' class="txt {{orderParam==='use'?'selected':''}}" bindtap='searchOeders'>待使用</view>
-    <view data-param='used' class="txt {{orderParam==='used'?'selected':''}}" bindtap='searchOeders'>已使用</view>
+    <view data-param='all' class="txt {{orderParam==='all'?'selected':''}}" bindtap='searchOrders'>全部</view>
+    <view data-param='use' class="txt {{orderParam==='use'?'selected':''}}" bindtap='searchOrders'>待使用</view>
+    <view data-param='used' class="txt {{orderParam==='used'?'selected':''}}" bindtap='searchOrders'>已使用</view>
+  </view>
+  <view class='order-list'>
+    <view class='items' wx:for="{{orderData}}" wx:key="">
+      <text class='title'>￥{{item.activity.name}}</text>
+      <text class='price'>￥{{item.price}}</text>
+    </view>
   </view>
 </view>

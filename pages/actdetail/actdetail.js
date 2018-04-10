@@ -54,11 +54,12 @@ Page({
       })
       this.shareDiscount(options.openid)
     }
+    this.activityDetail()  //活动详情
+    this.getDiscountList() //查询已砍价好友
   },
 
   onShow: function () {
-    this.activityDetail()  //活动详情
-    this.getDiscountList() //查询已砍价好友
+    
   },
   toService() {
     wx.navigateTo({

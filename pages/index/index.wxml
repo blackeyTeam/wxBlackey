@@ -1,8 +1,10 @@
 <!--index.wxml-->
 <view>
+  <scroll-view scroll-y="true" bindscrolltolower="loadMore">  
   <view class='header'>
     <view class="overview">
-        <view class='logo'></view>
+        <!-- <view class='logo'></view> -->
+        <image class='logo' src="./images/logo.png"></image>
         <view class='right-info'>
           <text class='num'>+447个</text>
           <text class='txt'>商家优惠活动</text>
@@ -12,21 +14,24 @@
         </view>
     </view>
     <view class="waveWrapperInner bgBottom">
-           <view class="wave waveBottom" style="background-image: url('images/wave-bot.png')"></view> 
-        </view>
+      <view class="wave waveBottom" style="background-image: url('https://www.ssqushe.com/opt/application/wave-bot.png')">
+      </view> 
+    </view>
   </view>
-  <view class='list'>
+  <view class='list'> 
     <view class='items' wx:for="{{activityObjArray}}" wx:key="">
       <navigator url="../actdetail/actdetail?id={{item.id}}">
         <image class='item-img' src="{{item.mainPage!=null?item.mainPage:''}}"></image>
         <view class='item-content'>
           <text class='title'>{{item.name}}</text>
-          <text class='price'>￥{{item.lowPrice}}.00</text>
+          <text class='price'>￥{{item.lowPrice}}</text>
+          <text class='salePrice'>市场价:￥{{item.salePrice}}</text>
           <text class='sold'>已售{{item.stock}}份</text>
         </view>
       </navigator>
     </view>
-  </view>
+  </view> 
+  </scroll-view>    
 </view>
 <wxs module="filter" src="../../utils/filter.wxs"></wxs> <!-- wxs过滤器 -->
 

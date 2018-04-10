@@ -18,32 +18,11 @@ Page({
       url: '../service/service'
     })
   },
-  toOrdersAll() {
+  toOrders(e) {
+    let param = e.currentTarget.dataset.param
     if (this.data.userId) {
       wx.navigateTo({
-        url: '../orders/orders?param=all&openid='+this.data.userId
-      })
-    } else {
-      wx.showToast({
-        title: '请先登录',
-      })
-    }
-  },
-  toOrdersUse() {
-    if (this.data.userId) {
-      wx.navigateTo({
-        url: '../orders/orders?param=use&openid=' + this.data.userId
-      })
-    } else {
-      wx.showToast({
-        title: '请先登录',
-      })
-    }
-  },
-  toOrdersUsed() {
-    if (this.data.userId) {
-      wx.navigateTo({
-        url: '../orders/orders?param=used&openid=' + this.data.userId
+        url: '../orders/orders?param=' +param+'&openid='+this.data.userId
       })
     } else {
       wx.showToast({

@@ -67,11 +67,11 @@
   padding: 35rpx 0 20rpx;
 }
 .part1-body .userinfo-avatar {
-  width: 50rpx;
-  height: 50rpx;
+  width: 60rpx;
+  height: 60rpx;
   border-radius:50%;
   margin-top: 30rpx;
-  margin-right: 35rpx;
+  margin-right: 25rpx;
   background-color:#fff;
 }
 
