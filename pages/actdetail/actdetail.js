@@ -198,15 +198,13 @@ Page({
     // 返回shareObj
     return shareObj;
   },
-  payTap: function () {
-    var self = this;
-    wx.request({
-      url: 'https://www.hgdqdev.cn/api/wxpay/unifiedorder',
-      data: {
-        openid: self.data.openid   // 这里正常项目不会只有openid一个参数
-      },
-      success: function (res) {
-        if (res.data.status == 100) {
+  payTap() {
+    request.pay({
+      openid: this.data.openid,
+      activityid: this.data.activityObj.id
+    },{
+      success:res => {
+        if (res.data.status == 200) {
           var payModel = res.data;
           wx.requestPayment({
             'timeStamp': payModel.timestamp,
@@ -225,9 +223,6 @@ Page({
             }
           })
         }
-      },
-      fail: function () {
-
       }
     })
   }

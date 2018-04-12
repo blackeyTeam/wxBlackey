@@ -21,3 +21,79 @@ page {
   border-bottom: 6rpx solid #1296db;
   font-weight: bold;
 }
+
+.order-list {
+  font-size: 0;
+}
+
+.order-list .items {
+  margin-top: 20rpx;
+  background-color: #fff;
+  padding: 30rpx 0 0 30rpx;
+}
+
+.order-list .items .order-top {
+  border-bottom: 1rpx solid #ccc;
+}
+
+.order-list .order-top .order-left {
+  float: left;
+  margin-right: 10rpx;
+}
+
+.order-list .order-top .order-left .logo{
+  width: 64rpx;
+  height: 64rpx;
+  background: #000;
+}
+
+.order-list .order-top .order-right {
+  padding-left: 90rpx;
+}
+
+.order-list .order-top .order-right .order-right-top {
+  font-size: 32rpx;
+  border-bottom: 1rpx solid #ccc;
+  padding-bottom: 30rpx;
+}
+
+.order-list .order-top .order-right .order-right-bottom {
+  padding: 20rpx 40rpx;
+}
+
+.order-list .order-top .order-right .order-price {
+  font-size: 32rpx;
+  font-weight: bold;
+  float: right;
+}
+
+.order-list .order-bottom {
+  padding: 30rpx 30rpx;
+}
+
+.order-list .order-bottom .order-btn {
+  float: right;
+  font-size: 28rpx;
+  padding: 14rpx 24rpx;
+  color: #1296db;
+  border: 1rpx solid #1296db;
+  border-radius: 6rpx;
+}
+
+.order-list .order-bottom .gray {
+  color: #ccc;
+  border: 1rpx solid #ccc;
+}
+
+.model {
+  height: 80%;
+}
+
+.model .input-code {
+  border: 1rpx solid #ccc;
+  border-radius: 10rpx;
+  font-size: 32rpx;
+  text-align: center;
+  padding: 16rpx;
+  margin-top: 10rpx;
+}

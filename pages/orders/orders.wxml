@@ -6,8 +6,27 @@
   </view>
   <view class='order-list'>
     <view class='items' wx:for="{{orderData}}" wx:key="">
-      <text class='title'>{{item.activity.name}}</text>
-      <text class='price'>￥{{item.price}}</text>
+      <view class='order-top'>
+        <view class='order-left'>
+          <image class='logo' src='./images/logo.png'></image></view>
+        <view class='order-right'>
+          <view class='order-right-top'>
+            <text class='order-title'>{{item.activity.name}}</text>
+          </view>
+          <view class='order-right-bottom clearfix'>
+            <text class='order-price'>￥{{item.price}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='order-bottom clearfix'>
+        <view data-id='{{item.id}}' wx:if="{{item.status === 'use'}}" class='order-btn' bindtap='toUse'>去使用</view>
+        <view wx:if="{{item.status === 'used'}}" class='order-btn gray'>已使用</view>
+      </view>
     </view>
+  </view>
+  <view class='model'>
+    <modal hidden="{{hiddenmodel}}" title="核销码" confirm-text="提交" cancel-text="取消" bindcancel="cancel" bindconfirm="confirm">  
+    <input class='input-code' type='number' placeholder="请输入核销码" bindinput="inputCode"/>  
+</modal>
   </view>
 </view>
