@@ -205,10 +205,12 @@ Page({
       activityid: this.data.activityObj.id
     },{
       success:res => {
-        if (res.data.status == 200) {
-          var payModel = res.data;
+        console.log(res);
+        if (res.data.code == 200) {
+          var payModel = res.data.data;
+          console.log(payModel);
           wx.requestPayment({
-            'timeStamp': payModel.timestamp,
+            'timeStamp': payModel.timeStamp,
             'nonceStr': payModel.nonceStr,
             'package': payModel.package,
             'signType': 'MD5',
