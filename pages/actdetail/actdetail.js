@@ -200,7 +200,8 @@ Page({
   },
   payTap() {
     request.pay({
-      openid: this.data.openid,
+      totalFee: this.data.activityObj.lowPrice,
+      openid: wx.getStorageSync("openid"),
       activityid: this.data.activityObj.id
     },{
       success:res => {
@@ -240,6 +241,6 @@ let request = {
     http.GET("/server/cut/list", data, frequestHandler)
   },
   pay: (data, frequestHandler) => {
-    http.GET("/server/cut/list", data, frequestHandler)
+    http.POST("/server/record/unifiedOrder", data, frequestHandler)
   }
 }
