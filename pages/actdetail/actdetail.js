@@ -205,10 +205,8 @@ Page({
       activityid: this.data.activityObj.id
     },{
       success:res => {
-        console.log(res);
         if (res.data.code == 200) {
           var payModel = res.data.data;
-          console.log(payModel);
           wx.requestPayment({
             'timeStamp': payModel.timeStamp,
             'nonceStr': payModel.nonceStr,
