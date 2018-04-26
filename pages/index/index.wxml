@@ -2,7 +2,7 @@
 <view>
   <scroll-view scroll-y="true" bindscrolltolower="loadMore">  
   <view class='header'>
-    <swiper indicator-dots="{{bannerSetting.indicatorDots}}" autoplay="{{bannerSetting.autoplay}}" interval="{{bannerSetting.interval}}" duration="{{bannerSetting.duration}}">
+    <swiper indicator-dots="{{bannerSetting.indicatorDots}}" autoplay="{{bannerSetting.autoplay}}" circular="{{bannerSetting.circular}}" interval="{{bannerSetting.interval}}" duration="{{bannerSetting.duration}}">
       <block wx:for="{{banners}}">
         <swiper-item>
            <navigator url="../actdetail/actdetail?id={{item.id}}">

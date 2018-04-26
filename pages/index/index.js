@@ -19,8 +19,9 @@ Page({
     ],
     bannerSetting: {
       indicatorDots: true,
-      autoplay: false,
-      interval: 5000,
+      autoplay: true,
+      circular: true,
+      interval: 3000,
       duration: 1000
     },
     size: 5,
