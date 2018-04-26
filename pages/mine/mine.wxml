@@ -8,7 +8,7 @@
   <view class='order'>
     <view class='order-head'>我的订单</view>
     <view class='order-body'>
-      <view data-param='all' class='order-body-item' bindtap='toOrders'>
+      <view data-param='' class='order-body-item' bindtap='toOrders'>
         <text class='iconfont icon-dingdan icon'></text>
         <text class='txt'>全部</text>
       </view>

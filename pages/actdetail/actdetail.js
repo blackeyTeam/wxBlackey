@@ -221,6 +221,10 @@ Page({
               })
             },
             'fail': function (res) {
+              request.cancelPay({ openid: wx.getStorageSync("openid")},{
+             success: res => {
+               console.log(res);
+             }})
             }
           })
         }
@@ -242,5 +246,8 @@ let request = {
   },
   pay: (data, frequestHandler) => {
     http.POST("/server/record/unifiedOrder", data, frequestHandler)
+  },
+  cancelPay: (data, frequestHandler) =>{
+    http.POST("/server/record/cancleOrder",data,frequestHandler)
   }
 }

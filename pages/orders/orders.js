@@ -5,7 +5,7 @@ import http from '../../utils/net.js' //网络请求
 Page({
   data: {
     userId:'', // 用户ID
-    activityId: '', // 活动ID
+    activityId: '', // 活动ID,
     code: '', // 核销码
     orderParam: '', // 订单参数(all,use,used)
     orderData: '',
@@ -21,6 +21,7 @@ Page({
   },
   orderInit() {
     request.getOrders({
+      openId: wx.getStorageSync("openid"),
       status: this.data.orderParam
     }, {
       success: res => {
@@ -93,6 +94,7 @@ Page({
       orderParam: e.target.dataset.param
     })
     request.getOrders({
+      openId: wx.getStorageSync("openid"),
       status: e.target.dataset.param
       }, {
       success: res => {
@@ -108,7 +110,7 @@ Page({
 
 let request = {
   getOrders: (data, frequestHandler) => {
-    http.POST("/server/record/page", data, frequestHandler)
+    http.GET("/server/record/queryOrder", data, frequestHandler)
   },
   useOrder: (data, frequestHandler) => {
     http.POST("/server/record/update", data, frequestHandler)
