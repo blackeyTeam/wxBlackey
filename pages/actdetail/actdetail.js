@@ -55,7 +55,7 @@ Page({
       this.shareDiscount(options.openid)
     }
     this.activityDetail()  //活动详情
-    this.getDiscountList() //查询已砍价好友
+    // this.getDiscountList() //查询已砍价好友
   },
 
   onShow: function () {
@@ -75,7 +75,9 @@ Page({
   //活动详情
   activityDetail: function () {
     let that = this
-    request.activityDetail({ id: that.data.id }, {
+    request.activityDetail({ activityid: that.data.id,
+      openid: wx.getStorageSync("openid")
+     }, {
       success: res => {
         let detail = decodeURIComponent(res.data.data.detail)
         wxParse.wxParse('detail', 'html', detail, that, 5);
@@ -139,7 +141,7 @@ Page({
         success: res => {
           console.log(res);
           let friends = res.data.data.length;
-          let discountArray = res.data.data.concat(that.data.discountArray);
+          let discountArray = res.data.data.friendavatar(that.data.discountArray);
           discountArray = discountArray.slice(0,6);
           that.setData({
             discountArray: discountArray,
