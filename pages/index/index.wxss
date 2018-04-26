@@ -6,6 +6,7 @@ swiper-item {
   overflow: visible;
 }
 .header {
+  height: 500rpx;
   position: relative;
   font-size: 0;
 }
@@ -28,10 +29,10 @@ swiper-item {
 .overview {
   width: 80%;
   position: absolute;
-  bottom: -20%;
+  bottom: 0;
   left:50%;
   transform:translateX(-50%);
-  box-shadow: 0 4rpx 16rpx 0 #ccc;
+  box-shadow: 0 0 10rpx 0 #ccc;
   background: #fff;
   border-radius: 10rpx;
   padding: 40rpx 0;
@@ -49,26 +50,45 @@ swiper-item {
   flex: 1;
 }
 .overview-item .num {
-  font-size: 32rpx;
+  font-size: 38rpx;
   text-align: center;
   color: #F56C6C;
 }
 .overview-item .txt {
-  font-size: 24rpx;
+  font-size: 22rpx;
   text-align: center;
+  color: #333;
 }
 .list {
   background-color: #fff;
   padding: 30rpx;
+  margin-top: 20rpx;
   font-size: 0;
+}
+.list>.title {
+  width: 130rpx;
+  margin: 0 auto;
+  font-size: 36rpx;
+  line-height:36rpx;
+  text-align: center;
+  position: relative;
+}
+.list>.title .icon-line{
+  width: 10rpx;
+  height: 30rpx;
+  border-radius: 5rpx;
+  background: #F56C6C;
+  transform:rotate(35deg);
+  position: absolute;
+  top: 25%;
+}
+.list>.title .right {
+  right: 0;
 }
 .items {
   width: 100%;
   height: auto;
-  border-radius: 10rpx;
-  border: 1rpx solid #ccc;
-  box-shadow: 0 4rpx 16rpx 0 #ccc;
-  box-sizing: border-box;
+  border-bottom: 1rpx solid #ccc;
   font-size: 0;
   margin-bottom: 30rpx;
   overflow: hidden;
@@ -79,7 +99,7 @@ swiper-item {
   background-color: #ccc;
 }
 .items .item-content {
-  padding: 10rpx 30rpx 20rpx;
+  padding: 20rpx 0 20rpx;
 }
 .item-content .title {
   display: block;
@@ -87,56 +107,38 @@ swiper-item {
   margin: 10rpx 0 20rpx;
   font-weight: bold;
 }
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
 .item-content .price {
-  display: inline-block;
-  margin-right: 10rpx;
+  display: block;
   font-size: 36rpx;
   color: #F56C6C;
+  margin-bottom: 20rpx;
 }
 .item-content .salePrice {
-  font-size: 26rpx;
+  display: block;
+  font-size: 24rpx;
   text-decoration:line-through;
+  margin-bottom: 30rpx;
+  color: #999;
+}
+.item-content .buy {
+  background: #F56C6C;
+  font-size: 26rpx;
+  color: #fff;
+  text-align: center;
+  padding: 16rpx 26rpx;
+  border-radius: 40rpx;
+  margin-bottom: 20rpx;
 }
 .item-content .sold {
-  margin-top: 10rpx;
-  float: right;
-  font-size: 28rpx;
-  color: #F56C6C;
-}
-
-
-@keyframes move_wave {
-  0% {
-      transform: translateX(0) translateZ(0) scaleY(1)
-  }
-  50% {
-      transform: translateX(-25%) translateZ(0) scaleY(0.6)
-  }
-  100% {
-      transform: translateX(-50%) translateZ(0) scaleY(1)
-  }
-}
-.waveWrapperInner {
-  position: absolute;
-  width: 100%;
-  overflow: hidden;
-  height: 100%;
-  left: 0;
-  bottom: -1px;
-}
-.bgBottom {
-    z-index: 5;
-}
-.wave {
-    position: absolute;
-    left: 0;
-    width: 200%;
-    height: 100%;
-    background-repeat: repeat no-repeat;
-    background-position: 0 bottom;
-    transform-origin: center bottom;
-}
-.waveBottom {
-  background-size: 50% 100px;
-  animation: move_wave 5s linear infinite;
+  display: block;
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 30rpx;
+  text-align: right;
 }

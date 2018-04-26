@@ -15,7 +15,7 @@
       </block>
     </swiper>
     <view class='overview'>
-      <view class='slogen'>—吃喝玩乐，靠谱还实惠—</view>
+      <view class='slogen'>—魔都吃喝玩乐，靠谱还实惠—</view>
       <view class='overview-content'>
         <view class='overview-item'>
           <view class='num'>488</view>
@@ -28,15 +28,26 @@
       </view>
     </view>
   </view>
-  <view class='list'> 
+  <view class='list'>
+    <view class='title'>
+      <view class='icon-line'></view>
+      <view>大牌</view>
+      <view>抢购</view>
+      <view class='icon-line right'></view>
+    </view>
     <view class='items' wx:for="{{activityObjArray}}" wx:key="">
       <navigator url="../actdetail/actdetail?id={{item.id}}">
         <image class='item-img' src="{{item.mainPage!=null?item.mainPage:''}}"></image>
         <view class='item-content'>
           <text class='title'>{{item.name}}</text>
-          <text class='price'>￥{{item.discountPrice/100}}</text>
-          <text class='salePrice'>市场价:￥{{item.salePrice/100}}</text>
-          <text class='sold'>已售{{item.stock}}份</text>
+          <view class='fl'>
+            <text class='price'>￥{{item.discountPrice/100}}</text>
+            <text class='salePrice'>市场价:￥{{item.salePrice/100}}</text>
+          </view>
+          <view class='fr'>
+            <view class='buy'>立即购买</view>
+            <text class='sold'>已售{{item.stock}}份</text>
+          </view>
         </view>
       </navigator>
     </view>
