@@ -2,20 +2,30 @@
 <view>
   <scroll-view scroll-y="true" bindscrolltolower="loadMore">  
   <view class='header'>
-    <view class="overview">
-        <!-- <view class='logo'></view> -->
-        <image class='logo' src="./images/logo.png"></image>
-        <view class='right-info'>
-          <text class='num'>+447个</text>
-          <text class='txt'>商家优惠活动</text>
-          <text class='txt'>——</text>
-          <text class='num'>+96745人</text>
-          <text class='txt'>获得实惠</text>
+    <swiper indicator-dots="{{bannerSetting.indicatorDots}}" autoplay="{{bannerSetting.autoplay}}" interval="{{bannerSetting.interval}}" duration="{{bannerSetting.duration}}">
+      <block wx:for="{{banners}}">
+        <swiper-item>
+           <navigator url="../actdetail/actdetail?id={{item.id}}">
+            <view class="banner">
+              <image src="{{item.url}}" class="banner-img"/>
+              <view class='gradient'></view>
+            </view>
+           </navigator> 
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class='overview'>
+      <view class='slogen'>—吃喝玩乐，靠谱还实惠—</view>
+      <view class='overview-content'>
+        <view class='overview-item'>
+          <view class='num'>488</view>
+          <view class='txt'>个商家优惠活动</view>
         </view>
-    </view>
-    <view class="waveWrapperInner bgBottom">
-      <view class="wave waveBottom" style="background-image: url('https://www.ssqushe.com/opt/application/wave-bot.png')">
-      </view> 
+        <view class='overview-item'>
+          <view class='num'>99199</view>
+          <view class='txt'>人获得优惠</view>
+        </view>
+      </view>
     </view>
   </view>
   <view class='list'> 

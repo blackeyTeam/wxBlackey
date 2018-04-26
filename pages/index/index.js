@@ -5,6 +5,24 @@ import http from '../../utils/net.js' //网络请求
 import login from '../../utils/login.js' //网络请求
 Page({
   data: {
+    banners: [
+      {
+        id: '/pages/index/index',
+        url: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'
+      }, {
+        id: '/pages/logs/logs',
+        url: 'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg'
+      }, {
+        id: '/pages/test/test',
+        url: 'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+      }
+    ],
+    bannerSetting: {
+      indicatorDots: true,
+      autoplay: false,
+      interval: 5000,
+      duration: 1000
+    },
     size: 5,
     page: 0,
     activityObjArray:[]
