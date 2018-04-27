@@ -7,7 +7,6 @@ import wxParse from'../../wxParse/wxParse.js';
 Page({
   data: {
     activityObj: {},
-    friends: 0,
     discountArray:[
       {
         friend:{
@@ -55,7 +54,6 @@ Page({
       this.shareDiscount(options.openid)
     }
     this.activityDetail()  //活动详情
-    // this.getDiscountList() //查询已砍价好友
   },
 
   onShow: function () {
@@ -67,7 +65,6 @@ Page({
     })
   },
   toHome() {
-    console.log(11111)
     wx.switchTab({
       url: '../index/index'
     })
@@ -79,10 +76,14 @@ Page({
       openid: wx.getStorageSync("openid")
      }, {
       success: res => {
-        let detail = decodeURIComponent(res.data.data.detail)
+        let detail = decodeURIComponent(res.data.data.detail);
         wxParse.wxParse('detail', 'html', detail, that, 5);
+        let discountArray = res.data.data.friendavatar.concat(that.data.discountArray);
+        discountArray = discountArray.slice(0, 6);
+        console.log(discountArray);
         that.setData({
-          activityObj: res.data.data
+          activityObj: res.data.data,
+          discountArray: discountArray
         })
       }
     })
@@ -118,37 +119,6 @@ Page({
 
       }
     })
-  },
-
-  //查询已砍价好友
-  getDiscountList: function () {
-    let that = this
-    let userOpenid = wx.getStorageSync("openid")
-    if (userOpenid == "") {
-      login.login(that.discountList())
-    }else{
-      that.discountList()
-    }
-
-  },
-
-  //已砍价列表
-  discountList: function () {
-    let that = this
-    request.getDiscountList({
-      openId: wx.getStorageSync("openid"), activity: that.data.id
-    }, {
-        success: res => {
-          console.log(res);
-          let friends = res.data.data.length;
-          let discountArray = res.data.data.friendavatar(that.data.discountArray);
-          discountArray = discountArray.slice(0,6);
-          that.setData({
-            discountArray: discountArray,
-            friends: friends
-          })
-        },
-      })
   },
 
   onShareAppMessage: function (options) {

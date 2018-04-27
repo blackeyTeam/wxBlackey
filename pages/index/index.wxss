@@ -27,21 +27,22 @@ swiper-item {
   background: linear-gradient(transparent 85%, #fff 99%);
 }
 .overview {
-  width: 80%;
+  width: 90%;
   position: absolute;
   bottom: 0;
   left:50%;
   transform:translateX(-50%);
-  box-shadow: 0 0 10rpx 0 #ccc;
+  box-shadow: 0 0 10rpx 1rpx #ccc;
   background: #fff;
   border-radius: 10rpx;
-  padding: 40rpx 0;
+  padding: 45rpx 0;
 }
 .overview .slogen {
   text-align: center;
   font-size: 36rpx;
   font-style:italic;
-  margin-bottom: 30rpx;
+  font-weight: bold;
+  margin-bottom: 35rpx;
 }
 .overview .overview-content {
   display: flex;
@@ -51,13 +52,13 @@ swiper-item {
 }
 .overview-item .num {
   font-size: 38rpx;
+  margin-bottom: 5rpx;
   text-align: center;
   color: #F56C6C;
 }
 .overview-item .txt {
-  font-size: 22rpx;
+  font-size: 24rpx;
   text-align: center;
-  color: #333;
 }
 .list {
   background-color: #fff;

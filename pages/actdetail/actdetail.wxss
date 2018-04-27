@@ -119,7 +119,6 @@ button[plain] {
   display: flex;
   width: 100%;
   height: 100rpx;
-  border-top: 1rpx solid #ccc;
   text-align: center;
   font-size: 24rpx;
   position: fixed;
@@ -129,9 +128,8 @@ button[plain] {
 .bottom-nav .home,
 .bottom-nav .service {
   flex: 1;
-  background-color: #fff;
+  background-color: #f5f6f7;
   height: 100rpx;
-  border-right: 1rpx solid #ccc;
   box-sizing: border-box;
   padding: 14rpx;
 }
@@ -145,7 +143,6 @@ button[plain] {
   color: #fff;
   box-sizing: border-box;
   font-size: 30rpx;
-  font-weight: bold;
 }
 
 .bottom-nav .icon {

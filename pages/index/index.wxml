@@ -3,7 +3,7 @@
   <scroll-view scroll-y="true" bindscrolltolower="loadMore">  
   <view class='header'>
     <swiper indicator-dots="{{bannerSetting.indicatorDots}}" autoplay="{{bannerSetting.autoplay}}" circular="{{bannerSetting.circular}}" interval="{{bannerSetting.interval}}" duration="{{bannerSetting.duration}}">
-      <block wx:for="{{banners}}">
+      <block wx:for="{{banners}}" wx:key="">
         <swiper-item>
            <navigator url="../actdetail/actdetail?id={{item.id}}">
             <view class="banner">
@@ -15,7 +15,7 @@
       </block>
     </swiper>
     <view class='overview'>
-      <view class='slogen'>—魔都吃喝玩乐，靠谱还实惠—</view>
+      <view class='slogen'>— 魔都吃喝玩乐，靠谱还实惠 —</view>
       <view class='overview-content'>
         <view class='overview-item'>
           <view class='num'>488</view>
