@@ -39,7 +39,7 @@
       <navigator url="../actdetail/actdetail?id={{item.id}}">
         <image class='item-img' src="{{item.mainPage!=null?item.mainPage:''}}"></image>
         <view class='item-content'>
-          <text class='title'>{{item.name}}</text>
+          <text class='title'><text class='label'>美食</text>{{item.name}}</text>
           <view class='fl'>
             <text class='price'>￥{{item.discountPrice/100}}</text>
             <text class='salePrice'>市场价:￥{{item.salePrice/100}}</text>

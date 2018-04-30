@@ -68,7 +68,7 @@ swiper-item {
 }
 .list>.title {
   width: 130rpx;
-  margin: 0 auto;
+  margin: 0 auto 50rpx;
   font-size: 36rpx;
   line-height:36rpx;
   text-align: center;
@@ -100,10 +100,18 @@ swiper-item {
   background-color: #ccc;
 }
 .items .item-content {
-  padding: 20rpx 0 20rpx;
+  padding: 10rpx 0 20rpx;
+}
+.item-content .label {
+  display: inline-block;
+  font-size: 24rpx;
+  font-weight: normal;
+  padding: 5rpx 15rpx;
+  background: #FFD945;
+  vertical-align: top;
 }
 .item-content .title {
-  display: block;
+  display: inline-block;
   font-size: 32rpx;
   margin: 10rpx 0 20rpx;
   font-weight: bold;
@@ -117,6 +125,7 @@ swiper-item {
 .item-content .price {
   display: block;
   font-size: 36rpx;
+  line-height: 60rpx;
   color: #F56C6C;
   margin-bottom: 20rpx;
 }

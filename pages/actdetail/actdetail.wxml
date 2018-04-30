@@ -27,15 +27,27 @@
       </view>
     </view>
     <view class='active-part2'>
-      <text class='name'>注意事项</text>
+      <view class='part-header'>
+        <view class='icon-line'></view>
+        <view class='name'>注意事项</view>
+        <view class='icon-line right'></view>
+      </view>
       <text class='txt'>{{activityObj.attention}}</text>
     </view>
     <view class='active-part3'>
-      <text class='name'>商品详情</text>
+      <view class='part-header'>
+        <view class='icon-line'></view>
+        <view class='name'>商品详情</view>
+        <view class='icon-line right'></view>
+      </view>
       <template is="wxParse" data="{{wxParseData:detail.nodes}}"/>
     </view>
     <view class='active-part4'>
-      <text class='name'>店铺信息</text>
+      <view class='part-header'>
+        <view class='icon-line'></view>
+        <text class='name'>店铺信息</text>
+        <view class='icon-line right'></view>
+      </view>
       <text class='txt'>【店名】{{activityObj.business.name}}</text>
       <text class='txt'>【地址】{{activityObj.business.address}}</text>
       <text class='txt'>【电话】{{activityObj.business.telephone}}</text>

@@ -21,17 +21,17 @@
 .active-overview .discountPrice {
   display: block;
   font-size: 40rpx;
-  color: #F56C6C;
+  color: #FF4040;
   margin-bottom: 10rpx;
 }
 .active-overview .salePrice {
   font-size: 24rpx;
-  color: #ccc;
+  color: #999;
   text-decoration:line-through;
 }
 .active-overview .saleout {
   font-size: 24rpx;
-  color: #ccc;
+  color: #999;
   float: right;
 }
 .active-part1 {
@@ -54,12 +54,12 @@
 }
 .part1-head .rushPrice{
   font-size: 40rpx;
-  color: #F56C6C;
+  color: #FF4040;
   margin-bottom: 10rpx;
 }
 .part1-head .stock{
   font-size: 24rpx;
-  color: #ccc;
+  color: #999;
   float: right;
 }
 .active-part1 .part1-body{
@@ -89,9 +89,28 @@ button[plain] {
   margin-right: 30rpx;
   padding: 0;
   color: #fff;
-  background-color: #1296db;
+  background-color: #FFC90E;
   float: right;
   font-size: 40rpx;
+}
+.part-header {
+  width: 220rpx;
+  overflow: visible;
+  margin: 0 auto 50rpx;
+  text-align: center;
+  position: relative;
+}
+.icon-line{
+  width: 10rpx;
+  height: 30rpx;
+  border-radius: 5rpx;
+  background: #FFC90E;
+  transform:rotate(35deg);
+  position: absolute;
+  top: 15%;
+}
+.part-header .right {
+  right: 0;
 }
 .active-part2,
 .active-part3,
@@ -139,7 +158,7 @@ button[plain] {
   height: 100rpx;
   line-height: 40rpx;
   padding: 10rpx 0;
-  background-color: #1296db;
+  background-color: #FF4040;
   color: #fff;
   box-sizing: border-box;
   font-size: 30rpx;
