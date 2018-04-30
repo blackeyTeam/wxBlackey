@@ -29,7 +29,7 @@
   font-size: 26rpx;
   right: 30rpx;
   top: 0;
-  background-color: #1296db;
+  background-color: #FFC90E;
   border-radius: 10rpx;
   color: #fff;
 }
