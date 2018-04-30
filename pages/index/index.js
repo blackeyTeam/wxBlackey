@@ -18,14 +18,15 @@ Page({
       }
     ],
     bannerSetting: {
-      indicatorDots: true,
+      indicatorDots: false,
       autoplay: true,
       circular: true,
       interval: 3000,
       duration: 1000
     },
     size: 5,
-    page: 0,
+    page: 1,
+    totalPages: 999,
     activityObjArray:[]
   },
 
@@ -36,6 +37,17 @@ Page({
 
   onShow:function(){
     
+  },
+
+  onReachBottom: function() {
+    if (this.data.page === this.data.totalPages) {
+      wx.showToast({
+        title: '没有更多数据了'
+      })
+    } else {
+      this.data.page++;
+      this.activityPage();
+    }
   },
 
   loadMore() {
@@ -51,9 +63,12 @@ Page({
     },{
       success: res => {
         console.log(res);
-        that.setData({
-          activityObjArray:res.data.content
-        })
+        if (this.data.page <= res.data.totalPages) {
+          that.setData({
+            activityObjArray: this.data.activityObjArray.concat(res.data.content),
+            totalPages: res.data.totalPages
+          })
+        }
       },
     })
   }
