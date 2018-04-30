@@ -8,36 +8,12 @@ Page({
   data: {
     activityObj: {},
     discountArray:[
-      {
-        friend:{
-          avatarUrl:'../../images/noavatar.png'
-        }
-      },
-      {
-        friend: {
-          avatarUrl: '../../images/noavatar.png'
-        }
-      },
-      {
-        friend: {
-          avatarUrl: '../../images/noavatar.png'
-        }
-      },
-      {
-        friend: {
-          avatarUrl: '../../images/noavatar.png'
-        }
-      },
-      {
-        friend: {
-          avatarUrl: '../../images/noavatar.png'
-        }
-      },
-      {
-        friend: {
-          avatarUrl: '../../images/noavatar.png'
-        }
-      }
+      '../../images/noavatar.png',
+      '../../images/noavatar.png',
+      '../../images/noavatar.png',
+      '../../images/noavatar.png',
+      '../../images/noavatar.png',
+      '../../images/noavatar.png'
     ]
   },
   onLoad: function (options) {
@@ -78,6 +54,7 @@ Page({
       success: res => {
         let detail = decodeURIComponent(res.data.data.detail);
         wxParse.wxParse('detail', 'html', detail, that, 5);
+        console.log(res.data);
         let discountArray = res.data.data.friendavatar.concat(that.data.discountArray);
         discountArray = discountArray.slice(0, 6);
         console.log(discountArray);
@@ -178,6 +155,10 @@ Page({
     },{
       success:res => {
         if (res.data.code == 200) {
+          wx.setStorage({
+            key: 'tradeNo',
+            data: res.data.data.orderNo,
+          })
           var payModel = res.data.data;
           wx.requestPayment({
             'timeStamp': payModel.timeStamp,
@@ -193,7 +174,9 @@ Page({
               })
             },
             'fail': function (res) {
-              request.cancelPay({ openid: wx.getStorageSync("openid")},{
+              request.cancelPay({ 
+                tradeNo: wx.getStorageSync("tradeNo"),
+                openid: wx.getStorageSync("openid")},{
              success: res => {
                console.log(res);
              }})

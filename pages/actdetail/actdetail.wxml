@@ -20,7 +20,7 @@
         <text>邀请好友助力可获得特价，已邀请<text style='color:#F56C6C'>{{activityObj.friendavatar.length}}</text>个</text>
         <view>
           <view>
-            <image wx:for="{{discountArray}}" wx:key="" class="userinfo-avatar" src="{{item.friend.avatarUrl}}" background-size="cover"></image>
+            <image wx:for="{{discountArray}}" wx:key="" class="userinfo-avatar" src="{{item}}" background-size="cover"></image>
             <button class='invitation' plain="true" data-name="shareBtn" open-type="share">+</button>
           </view>
         </view>
@@ -48,10 +48,10 @@
         <text class='name'>店铺信息</text>
         <view class='icon-line right'></view>
       </view>
-      <text class='txt'>【店名】{{activityObj.business.name}}</text>
-      <text class='txt'>【地址】{{activityObj.business.address}}</text>
-      <text class='txt'>【电话】{{activityObj.business.telephone}}</text>
-      <text class='txt'>【手机】{{activityObj.business.mobile}}</text>
+      <text class='txt'><text class='iconfont icon-dianpu info-icon'></text>【店名】{{activityObj.business.name}}</text>
+      <text class='txt'><text class='iconfont icon-dizhi info-icon'></text>【地址】{{activityObj.business.address}}</text>
+      <text class='txt'><text class='iconfont icon-dianhuazhengzaibohao info-icon'></text>【电话】{{activityObj.business.telephone}}</text>
+      <text class='txt'><text class='iconfont icon-shouji info-icon'></text>【手机】{{activityObj.business.mobile}}</text>
     </view>
   </view>
   <view class='bottom-nav'>

@@ -11,11 +11,11 @@
 
 @font-face {
   font-family: 'iconfont';  /* project id 619267 */
-  src: url('//at.alicdn.com/t/font_619267_h395ly7722o6r.eot');
-  src: url('//at.alicdn.com/t/font_619267_h395ly7722o6r.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_619267_h395ly7722o6r.woff') format('woff'),
-  url('//at.alicdn.com/t/font_619267_h395ly7722o6r.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_619267_h395ly7722o6r.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_619267_avy9abw5en0icnmi.eot');
+  src: url('//at.alicdn.com/t/font_619267_avy9abw5en0icnmi.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_619267_avy9abw5en0icnmi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_619267_avy9abw5en0icnmi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_619267_avy9abw5en0icnmi.svg#iconfont') format('svg');
 }
 
 .iconfont {
@@ -32,7 +32,13 @@
 
 .icon-kefu:before { content: "\e60d"; }
 
+.icon-dizhi:before { content: "\e61a"; }
+
 .icon-discover:before { content: "\e64d"; }
+
+.icon-movie:before { content: "\e6bb"; }
+
+.icon-dianpu:before { content: "\e613"; }
 
 .icon-ziyuan:before { content: "\e621"; }
 
@@ -41,6 +47,10 @@
 .icon-yuyuedingdan:before { content: "\e8a2"; }
 
 .icon-dingdan:before { content: "\e618"; }
+
+.icon-shouji:before { content: "\e612"; }
+
+.icon-dianhuazhengzaibohao:before { content: "\e76e"; }
 
 .container {
   height: 100%;

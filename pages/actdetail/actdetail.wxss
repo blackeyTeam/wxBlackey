@@ -43,7 +43,7 @@
   box-shadow: 0 4rpx 16rpx 0 #ccc;
 }
 .active-part1 .part1-head{
-  padding: 35rpx 0;
+  padding: 20rpx 0 35rpx;
   border-bottom: 1rpx solid #ccc;
 }
 .part1-head .title{
@@ -108,6 +108,11 @@ button[plain] {
   transform:rotate(35deg);
   position: absolute;
   top: 15%;
+}
+.info-icon {
+  color: #FFC90E;
+  font-weight: bold;
+  vertical-align: middle;
 }
 .part-header .right {
   right: 0;

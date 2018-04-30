@@ -63,7 +63,6 @@ swiper-item {
 .list {
   background-color: #fff;
   padding: 30rpx;
-  margin-top: 20rpx;
   font-size: 0;
 }
 .list>.title {
@@ -73,6 +72,7 @@ swiper-item {
   line-height:36rpx;
   text-align: center;
   position: relative;
+  margin-bottom:30rpx;
 }
 .list>.title .icon-line{
   width: 10rpx;
