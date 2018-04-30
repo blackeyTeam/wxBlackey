@@ -8,36 +8,12 @@ Page({
   data: {
     activityObj: {},
     discountArray:[
-      {
-        friend:{
-          avatarUrl:'../../images/noavatar.png'
-        }
-      },
-      {
-        friend: {
-          avatarUrl: '../../images/noavatar.png'
-        }
-      },
-      {
-        friend: {
-          avatarUrl: '../../images/noavatar.png'
-        }
-      },
-      {
-        friend: {
-          avatarUrl: '../../images/noavatar.png'
-        }
-      },
-      {
-        friend: {
-          avatarUrl: '../../images/noavatar.png'
-        }
-      },
-      {
-        friend: {
-          avatarUrl: '../../images/noavatar.png'
-        }
-      }
+      '../../images/noavatar.png',
+      '../../images/noavatar.png',
+      '../../images/noavatar.png',
+      '../../images/noavatar.png',
+      '../../images/noavatar.png',
+      '../../images/noavatar.png'
     ]
   },
   onLoad: function (options) {

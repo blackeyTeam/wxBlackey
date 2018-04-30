@@ -20,7 +20,7 @@
         <text>邀请好友助力可获得特价，已邀请<text style='color:#F56C6C'>{{activityObj.friendavatar.length}}</text>个</text>
         <view>
           <view>
-            <image wx:for="{{discountArray}}" wx:key="" class="userinfo-avatar" src="{{item.friend.avatarUrl}}" background-size="cover"></image>
+            <image wx:for="{{discountArray}}" wx:key="" class="userinfo-avatar" src="{{item}}" background-size="cover"></image>
             <button class='invitation' plain="true" data-name="shareBtn" open-type="share">+</button>
           </view>
         </view>
