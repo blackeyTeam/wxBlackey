@@ -7,12 +7,11 @@ Page({
     userId:'', // 用户ID
     activityId: '', // 活动ID,
     code: '', // 核销码
-    orderParam: '', // 订单参数(all,use,used)
+    orderParam: '', // 订单参数(‘’,use,used)
     orderData: '',
     hiddenmodel: true // 隐藏弹窗
   },
   onLoad: function (options) {
-    console.log(options);
     this.setData({
       userId: options.openid,
       orderParam: options.param,

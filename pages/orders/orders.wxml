@@ -6,7 +6,7 @@
   </view>
   <view class='order-list'>
     <view class='items' wx:for="{{orderData}}" wx:key="">
-      <image class='item-img' src="{{item.mainPage!=null?item.mainPage:''}}"></image>
+      <image class='item-img' src="{{item.activity.mainPage!=null?item.activity.mainPage:''}}"></image>
       <view class='item-content'>
         <text class='title'><text class='label'>美食</text>{{item.activity.name}}</text>
         <view class='fl'>
@@ -14,7 +14,8 @@
           <text class='salePrice'>下单时间:{{item.createdDate}}</text>
         </view>
         <view class='fr'>
-          <view class='buy'>立即购买</view>
+          <view data-id='{{item.id}}' wx:if="{{item.status === 'use'}}" class='order-btn' bindtap='toUse'>去使用</view>
+        <view wx:if="{{item.status === 'used'}}" class='order-btn gray'>已使用</view>
         </view>
       </view>
       <!-- <view class='order-top'>
