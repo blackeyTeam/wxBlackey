@@ -154,6 +154,10 @@ Page({
     },{
       success:res => {
         if (res.data.code == 200) {
+          wx.setStorage({
+            key: 'tradeNo',
+            data: res.data.data.orderNo,
+          })
           var payModel = res.data.data;
           wx.requestPayment({
             'timeStamp': payModel.timeStamp,
@@ -169,7 +173,9 @@ Page({
               })
             },
             'fail': function (res) {
-              request.cancelPay({ openid: wx.getStorageSync("openid")},{
+              request.cancelPay({ 
+                tradeNo: wx.getStorageSync("tradeNo"),
+                openid: wx.getStorageSync("openid")},{
              success: res => {
                console.log(res);
              }})
