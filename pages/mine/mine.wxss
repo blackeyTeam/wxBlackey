@@ -6,7 +6,7 @@ page {
   height: 300rpx;
   flex-direction: row;
   align-items: left;
-  background-color: #1296db;
+  background-color: #FFC90E;
 }
 
 .userinfo-avatar {
