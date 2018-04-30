@@ -8,13 +8,13 @@ Page({
     banners: [
       {
         id: '2c90eaab62969a4301629f0e4f460002',
-        url: 'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg'
+        url: 'https://www.ssqushe.com/opt/application/chiheiA2041524884537762.jpeg'
       }, {
         id: '2c90eaab62b023300162d64753e70000',
-        url: 'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg'
+        url: 'https://www.ssqushe.com/opt/application/chiheiA3661524840427862.jpeg'
       }, {
         id: '2c90eaab62969a4301629f0e4f460002',
-        url: 'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+        url: 'https://www.ssqushe.com/opt/application/chiheiA2791524884664783.jpg'
       }
     ],
     bannerSetting: {
